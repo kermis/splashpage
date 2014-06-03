@@ -1,0 +1,56 @@
+
+.align-right {
+    // text-align: right;
+    float: right;
+
+    &:after {
+        clear: both;
+    }
+
+    &.title {
+        padding-right: 0.4em;
+    }
+}
+
+.align-left {
+    &.title {
+        padding-left: 0.4em;
+    }
+}
+
+
+
+.space {
+    padding:6em 4em;
+}
+
+.game {
+    margin: 5em 0em;
+}
+
+.play {
+    margin-top:1em;
+}
+
+.orange {
+    @include setColor($color-orange);
+}
+
+.green {
+    @include setColor($color-green);
+}
+
+.blue {
+    @include setColor($color-blue);
+}
+
+.red {
+    @include setColor($color-red);
+}
+
+.btn {
+    padding: 0.8em 5em;
+}
+
+
+

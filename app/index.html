@@ -27,6 +27,12 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+            <nav id="navigation">
+                    <a class="active" href="#about">About kerm.is</a>
+                    <a href="#games">Play the games</a>
+                    <a href="#technology">Technology</a>
+            </nav>
+
             <div id="header">
                 <header role="banner">
                     <video autoplay="1" loop="1">
@@ -35,12 +41,6 @@
                         <img src="images/header.jpg">
                     </video>
                 </header>
-
-                <nav>
-                    <a class="active" href="#about">About kerm.is</a>
-                    <a href="#games">Play the games</a>
-                    <a href="#technology">Technology</a>
-                </nav>
             </div>
 
             <section id="about" class="container-fluid space">
@@ -68,7 +68,8 @@
 
                 <div class="row game orange" id="fish">
                     <div class="col-xs-8 col-md-4 col-lg-4">
-                        <img src="images/car.png" alt="car">
+                        <!-- <img src="images/duck.png" alt="duck"> -->
+                        <div class="game-pic duck"></div>
                     </div>
                     <div class="col-xs-8 col-md-8 col-lg-8">
                         <h2>Fish.kerm.is</h2>
@@ -95,13 +96,13 @@
                         <button type="button" class="play btn">Play</button>
                     </div>
                     <div class="col-xs-8 col-md-4 col-lg-4">
-                        <img src="images/car.png" alt="car">
+                        <div class="game-pic car"></div>
                     </div>
                 </div>
 
                 <div class="row game red" id="Fly">
                     <div class="col-xs-8 col-md-4 col-lg-4">
-                        <img src="images/car.png" alt="car">
+                        <div class="game-pic fly"></div>
                     </div>
                     <div class="col-xs-8 col-md-8 col-lg-8">
                         <h2>Fly.kerm.is</h2>
@@ -129,13 +130,13 @@
                         <button type="button" class="play btn">Play</button>
                     </div>
                     <div class="col-xs-8 col-md-4 col-lg-4">
-                        <img src="images/car.png" alt="car">
+                        <div class="game-pic shoot"></div>
                     </div>
                 </div>
 
                 <div class="row game orange" id="Basket">
                     <div class="col-xs-8 col-md-4 col-lg-4">
-                        <img src="images/car.png" alt="car">
+                        <div class="game-pic basket"></div>
                     </div>
                     <div class="col-xs-8 col-md-8 col-lg-8">
                         <h2>Basket.kerm.is</h2>
@@ -151,6 +152,30 @@
                 </div>
 
             </section>
+
+            <section id="technology" class="container-fluid space">
+                <div class="row">
+                    <h1 class="title align-left">The technologies we used</h1>
+                    <div class="col-xs-8 col-md-8 col-lg-8">
+                        <article>
+                            <p>Kerm.is is a website made by Bart Van Itterbeeck &amp; Robbert Wolfs. These two Web&amp;UX students wanted to do something with new web technology like WebGL, Three.js and socket.io. So they started Kerm.is, a website where you can play all kind of different carnival games.</p>
+                            <p>They wanted to let the user expierence something totally new! What if the user can play a game with their smartphone as controller or just with their hands? To accomplisch this Bart &amp; Robbert used Node.js, websockets and a leap motion.</p>
+                            <p>But why don’t they use a 3D program like Unity? Because Bart &amp; Robbert don’t like to install plugins and they wanted to learn new native, fancy, cool webtechnologies and not an old, dirty, ... language like C#. This would be a challenge they both looked forward to!</p>
+                            <p>Quick, go and try these awesome games and be amazed with what the web can do these days!</p>
+
+                        </article>
+                    </div>
+                    <div class="col-xs-8 col-md-4 col-lg-4">
+                        <div class="logo bottom"></div>
+                        <div class="logo ticket"></div>
+                        <div class="logo top"></div>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                © 2014 kerm.is - Bart van itterbeeck &amp; Robbert Wolfs #teamMCT
+            </footer>
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -184,8 +209,10 @@
         <script src="bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script> -->
         <!-- endbuild -->
 
+
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
+
 </body>
 </html>

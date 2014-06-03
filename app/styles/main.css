@@ -4462,7 +4462,7 @@ button.close {
   padding-left: 0.4em; }
 
 .space {
-  padding: 6em 4em; }
+  padding: 4em 4em; }
 
 .game {
   margin: 5em 0em; }
@@ -4507,7 +4507,7 @@ body {
 h1 {
   font-size: 3.5em; }
 
-h1, h2, h3, h4, h5, h6, nav {
+h1, h2, h3, h4, h5, h6, nav, footer {
   text-transform: uppercase;
   font-family: bebas-neue, sans-serif;
   -webkit-font-smoothing: antialiased; }
@@ -4542,21 +4542,31 @@ article {
       min-height: 100%;
       width: auto;
       height: auto; }
-  #header nav {
-    position: absolute;
-    bottom: 0em;
-    width: 100%;
-    height: 5em;
-    background-color: #ffffff;
-    text-align: center;
-    padding: 1em; }
-    #header nav a {
-      font-size: 2.3em;
-      color: #e6414b;
-      padding: 0px 5em;
-      text-decoration: none; }
-      #header nav a:hover, #header nav a.active {
-        color: #094a69; }
+
+/**
+ *
+ * Navigations
+ *
+ */
+#navigation {
+  position: absolute;
+  bottom: 0em;
+  width: 100%;
+  height: 5em;
+  background-color: #ffffff;
+  text-align: center;
+  padding: 1em;
+  z-index: 100; }
+  #navigation a {
+    font-size: 2.3em;
+    color: #e6414b;
+    padding: 0px 5em;
+    text-decoration: none; }
+    #navigation a:hover, #navigation a.active {
+      color: #094a69; }
+  #navigation.fixed {
+    position: fixed;
+    top: 0px; }
 
 /**
  *
@@ -4569,10 +4579,33 @@ article {
   width: 100%;
   height: auto;
   background-color: #e6414b;
-  color: #ffffff; }
+  color: #ffffff;
+  overflow: hidden; }
   #about h1 {
     color: #ffffff;
     padding-bottom: 0.5em; }
+  #about .logo {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    top: -5em; }
+    #about .logo.top {
+      background-image: url('../images/logo-top.svg');
+      right: -3em;
+      background-color: #e6414b; }
+    #about .logo.ticket {
+      background-image: url('../images/logo-ticket.svg');
+      right: -43.3em;
+      width: 300px;
+      transition: all 1.4s ease; }
+      #about .logo.ticket.slide {
+        right: 7.2em; }
+    #about .logo.bottom {
+      background-image: url('../images/logo-bottom.svg');
+      right: 2.9em; }
 
 /**
  *
@@ -4587,24 +4620,48 @@ article {
   height: auto; }
   #games h1 {
     color: #094a69; }
+  #games .game-pic {
+    width: 100%;
+    position: relative;
+    height: 300px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; }
+    #games .game-pic.duck {
+      background-image: url('../images/duck.png'); }
+    #games .game-pic.car {
+      background-image: url('../images/car.png'); }
+    #games .game-pic.fly {
+      background-image: url('../images/fly.png'); }
+    #games .game-pic.shoot {
+      background-image: url('../images/shoot.png'); }
+    #games .game-pic.basket {
+      background-image: url('../images/basket.png'); }
 
-.logo {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom center;
-  width: 600px;
-  height: 600px;
-  position: absolute; }
-  .logo.top {
-    background-image: url('../images/logo-top.svg');
-    left: 100px;
-    top: -1px; }
-  .logo.ticket {
-    background-image: url('../images/logo-ticket.svg');
-    left: 300px;
-    transition: all 1.4s ease; }
-    .logo.ticket.slide {
-      left: -35px; }
-  .logo.bottom {
-    background-image: url('../images/logo-bottom.svg');
-    left: 56px; }
+/**
+ *
+ * Technology
+ *
+ */
+#technology {
+  position: relative;
+  width: 100%;
+  top: 100%;
+  height: auto;
+  background-color: #f26f40;
+  color: #ffffff; }
+  #technology h1 {
+    color: #ffffff;
+    padding-bottom: 0.5em; }
+
+footer {
+  position: relative;
+  width: 100%;
+  top: 100%;
+  height: auto;
+  background-color: #ffffff;
+  color: #094a69;
+  font-size: 1.4em;
+  text-align: center;
+  padding: 0.4em; }

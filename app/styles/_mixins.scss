@@ -1,6 +1,14 @@
 @mixin setColor($c) {
     h2 {  color: $c; }
-    button { background-color: $c; }
+    a {
+        background-color: $c;
+        color:white;
+
+        &:hover {
+            color:white;
+            background-color: darken( $c, 10% )
+        }
+    }
 }
 
 

@@ -41,30 +41,11 @@ article {
  *
  */
 
-#header {
-    position: absolute;
-    width: 100%;
-    top:0px;
-    height: 100%;
-
-    header {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+ #header {
+    display: none;
+ }
 
 
-        video {
-            position:fixed;
-            max-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-
-            // object-fit: fill;
-            // o-object-fit: fill;
-        }
-    }
-}
 
 /**
  *
@@ -75,19 +56,22 @@ article {
 
 #navigation {
     position: absolute;
-    bottom:0em;
+    // bottom:0em; // #large
+    top:0px;
     width: 100%;
     height: 5em;
     background-color: $background;
     text-align: center;
     padding: 1em;
     z-index: 100;
+    background-color: rgba($color-white, .95);
 
     a {
-        font-size: 2.3em;
+        font-size: 2em;
         color:$nav;
-        padding:0px 5em;
+        margin: 0px .6em;
         text-decoration: none;
+        @include slide(all .5s ease);
 
         &:hover, &.active {
             color:$nav-hover;
@@ -97,6 +81,8 @@ article {
     &.fixed {
         position : fixed;
         top:0px;
+        border-bottom:1px $color-red solid;
+
     }
 }
 
@@ -108,7 +94,8 @@ article {
 
 #about {
     position: relative;
-    top:100%;
+    // top:100%;
+    top:5em;
     width: 100%;
     height:auto;
     background-color: $background-highlight;
@@ -121,38 +108,9 @@ article {
     }
 
     .logo {
-
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center left;
-        width: 100px;
-        height: 300px;
-        position: absolute;
-        top: -5em;
-
-        &.top {
-            background-image : url('../images/logo-top.svg');
-            right: -3em;
-            background-color: $background-highlight;
-        }
-
-        &.ticket {
-            background-image : url('../images/logo-ticket.svg');
-            right: -43.3em;
-            width: 300px;
-            @include slide(all 1.4s ease);
-
-            &.slide {
-                right:7.2em;
-            }
-        }
-
-        &.bottom {
-            background-image : url('../images/logo-bottom.svg');
-            right:2.9em;
-        }
-
+        display: none;
     }
+
 }
 
 /**
@@ -163,7 +121,8 @@ article {
 
 #games {
     position: relative;
-    top:100%;
+    // top:100%; // #large
+    top:5em;
     background-color: $background;
     width: 100%;
     height: auto;
@@ -171,6 +130,8 @@ article {
     h1 {
         color: $title-blue;
     }
+
+
 
     .game-pic {
         width: 100%;
@@ -203,6 +164,10 @@ article {
             background-image: url('../images/basket.png');
         }
     }
+
+    .multi {
+        margin-left : 0em;
+    }
 }
 
 
@@ -217,7 +182,8 @@ article {
 #technology {
     position: relative;
     width: 100%;
-    top:100%;
+    //top:100%; // #large
+    top:5em;
     height:auto;
     background-color: $background-footer;
     color: $color-white;
@@ -227,12 +193,53 @@ article {
         padding-bottom:.5em;
     }
 
+    .tech {
+        width: 100%;
+        height: 75px;
+        background-repeat : no-repeat;
+        background-size : 75%;
+        background-position : center;
+
+        &.webgl {
+            background-image : url('../images/webgl.svg');
+        }
+
+        &.three {
+            background-image : url('../images/three.svg');
+        }
+
+        &.node {
+            background-image : url('../images/node.svg');
+        }
+
+        &.socket {
+            background-image : url('../images/socket.svg');
+        }
+
+        &.leap {
+            background-image : url('../images/leap.svg');
+        }
+
+        &.heroku {
+            background-image : url('../images/heroku.svg');
+        }
+
+        &.create {
+            background-image : url('../images/create.svg');
+        }
+
+        &.physi {
+            background-image : url('../images/physi.svg');
+        }
+
+
+    }
 }
 
 footer {
     position: relative;
     width: 100%;
-    top:100%;
+    top:2em;
     height:auto;
     background-color: $background;
     color: $color-blue;

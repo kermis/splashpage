@@ -4451,15 +4451,16 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.align-right {
-  float: right; }
-  .align-right:after {
-    clear: both; }
-  .align-right.title {
-    padding-right: 0.4em; }
+.align-right:after {
+  clear: both; }
+.align-right.title {
+  text-align: center; }
 
 .align-left.title {
-  padding-left: 0.4em; }
+  text-align: center; }
+
+.right {
+  float: none; }
 
 .space {
   padding: 4em 4em; }
@@ -4468,27 +4469,44 @@ button.close {
   margin: 5em 0em; }
 
 .play {
+  transition: all 0.5s ease;
   margin-top: 1em; }
 
 .orange h2 {
   color: #f26f40; }
-.orange button {
-  background-color: #f26f40; }
+.orange a {
+  background-color: #f26f40;
+  color: white; }
+  .orange a:hover {
+    color: white;
+    background-color: #ef4810; }
 
 .green h2 {
   color: #1f7350; }
-.green button {
-  background-color: #1f7350; }
+.green a {
+  background-color: #1f7350;
+  color: white; }
+  .green a:hover {
+    color: white;
+    background-color: #144b34; }
 
 .blue h2 {
   color: #094a69; }
-.blue button {
-  background-color: #094a69; }
+.blue a {
+  background-color: #094a69;
+  color: white; }
+  .blue a:hover {
+    color: white;
+    background-color: #05293a; }
 
 .red h2 {
   color: #e6414b; }
-.red button {
-  background-color: #e6414b; }
+.red a {
+  background-color: #e6414b;
+  color: white; }
+  .red a:hover {
+    color: white;
+    background-color: #d81c29; }
 
 .btn {
   padding: 0.8em 5em; }
@@ -4528,20 +4546,7 @@ article {
  *
  */
 #header {
-  position: absolute;
-  width: 100%;
-  top: 0px;
-  height: 100%; }
-  #header header {
-    position: absolute;
-    width: 100%;
-    height: 100%; }
-    #header header video {
-      position: fixed;
-      max-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto; }
+  display: none; }
 
 /**
  *
@@ -4550,23 +4555,26 @@ article {
  */
 #navigation {
   position: absolute;
-  bottom: 0em;
+  top: 0px;
   width: 100%;
   height: 5em;
   background-color: #ffffff;
   text-align: center;
   padding: 1em;
-  z-index: 100; }
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95); }
   #navigation a {
-    font-size: 2.3em;
+    font-size: 2em;
     color: #e6414b;
-    padding: 0px 5em;
-    text-decoration: none; }
+    margin: 0px 0.6em;
+    text-decoration: none;
+    transition: all 0.5s ease; }
     #navigation a:hover, #navigation a.active {
       color: #094a69; }
   #navigation.fixed {
     position: fixed;
-    top: 0px; }
+    top: 0px;
+    border-bottom: 1px #e6414b solid; }
 
 /**
  *
@@ -4575,7 +4583,7 @@ article {
  */
 #about {
   position: relative;
-  top: 100%;
+  top: 5em;
   width: 100%;
   height: auto;
   background-color: #e6414b;
@@ -4585,27 +4593,7 @@ article {
     color: #ffffff;
     padding-bottom: 0.5em; }
   #about .logo {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center left;
-    width: 100px;
-    height: 300px;
-    position: absolute;
-    top: -5em; }
-    #about .logo.top {
-      background-image: url('../images/logo-top.svg');
-      right: -3em;
-      background-color: #e6414b; }
-    #about .logo.ticket {
-      background-image: url('../images/logo-ticket.svg');
-      right: -43.3em;
-      width: 300px;
-      transition: all 1.4s ease; }
-      #about .logo.ticket.slide {
-        right: 7.2em; }
-    #about .logo.bottom {
-      background-image: url('../images/logo-bottom.svg');
-      right: 2.9em; }
+    display: none; }
 
 /**
  *
@@ -4614,7 +4602,7 @@ article {
  */
 #games {
   position: relative;
-  top: 100%;
+  top: 5em;
   background-color: #ffffff;
   width: 100%;
   height: auto; }
@@ -4638,6 +4626,8 @@ article {
       background-image: url('../images/shoot.png'); }
     #games .game-pic.basket {
       background-image: url('../images/basket.png'); }
+  #games .multi {
+    margin-left: 0em; }
 
 /**
  *
@@ -4647,21 +4637,120 @@ article {
 #technology {
   position: relative;
   width: 100%;
-  top: 100%;
+  top: 5em;
   height: auto;
   background-color: #f26f40;
   color: #ffffff; }
   #technology h1 {
     color: #ffffff;
     padding-bottom: 0.5em; }
+  #technology .tech {
+    width: 100%;
+    height: 75px;
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center; }
+    #technology .tech.webgl {
+      background-image: url('../images/webgl.svg'); }
+    #technology .tech.three {
+      background-image: url('../images/three.svg'); }
+    #technology .tech.node {
+      background-image: url('../images/node.svg'); }
+    #technology .tech.socket {
+      background-image: url('../images/socket.svg'); }
+    #technology .tech.leap {
+      background-image: url('../images/leap.svg'); }
+    #technology .tech.heroku {
+      background-image: url('../images/heroku.svg'); }
+    #technology .tech.create {
+      background-image: url('../images/create.svg'); }
+    #technology .tech.physi {
+      background-image: url('../images/physi.svg'); }
 
 footer {
   position: relative;
   width: 100%;
-  top: 100%;
+  top: 2em;
   height: auto;
   background-color: #ffffff;
   color: #094a69;
   font-size: 1.4em;
   text-align: center;
   padding: 0.4em; }
+
+@media (min-width: 1200px) {
+  body {
+    background-color: yellow !important; }
+  #navigation a {
+    margin: 0px 5em; }
+  .multi {
+    margin-left: 0.5em !important; } }
+
+@media (min-width: 992px) {
+  body {
+    background-color: green !important; }
+  #header {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    display: block;
+    height: 100%; }
+    #header header {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+      #header header video {
+        position: fixed;
+        max-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto; }
+  #about, #games, #technology, footer {
+    top: 100%; }
+  #navigation {
+    bottom: 0em !important;
+    top: auto; }
+    #navigation a {
+      font-size: 2.3em;
+      margin: 0px 3em; }
+  .logo {
+    display: block !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    top: -5em; }
+    .logo.top {
+      background-image: url('../images/logo-top.svg');
+      right: -3em;
+      background-color: #e6414b; }
+    .logo.ticket {
+      background-image: url('../images/logo-ticket.svg');
+      right: -43.3em;
+      width: 300px;
+      transition: all 1.4s ease; }
+      .logo.ticket.slide {
+        right: 7.2em; }
+    .logo.bottom {
+      background-image: url('../images/logo-bottom.svg');
+      right: 2.9em; }
+  .right {
+    float: right; } }
+
+@media (min-width: 768px) {
+  body {
+    background-color: hotpink !important; }
+  .title {
+    text-align: left !important; }
+  .align-right .title {
+    padding-right: 0.4em; }
+  .align-left .title {
+    padding-left: 0.4em; } }
+
+@media (min-width: 480px) {
+  body {
+    background-color: red !important; }
+  #technology .tech {
+    height: 100px; } }

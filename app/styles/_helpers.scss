@@ -1,23 +1,27 @@
 
 .align-right {
-    // text-align: right;
-    float: right;
+    //float: right; #large
 
     &:after {
         clear: both;
     }
 
     &.title {
-        padding-right: 0.4em;
+        // padding-right: 0.4em; // #large
+        text-align: center;
     }
 }
 
 .align-left {
     &.title {
-        padding-left: 0.4em;
+        // padding-left: 0.4em; // #large
+        text-align: center;
     }
 }
 
+.right {
+    float : none;
+}
 
 
 .space {
@@ -29,6 +33,7 @@
 }
 
 .play {
+    @include slide(all .5s ease);
     margin-top:1em;
 }
 

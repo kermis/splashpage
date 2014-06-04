@@ -1,0 +1,143 @@
+@media (min-width: $screen-lg-min) {
+  body {
+    background-color: yellow !important;
+  }
+
+  #navigation {
+    a {
+        margin: 0px 5em;
+    }
+  }
+
+     .multi {
+        margin-left : .5em !important;
+    }
+
+}
+
+
+@media (min-width: $screen-md-min) {
+  body {
+    background-color: green !important;
+  }
+
+  #header {
+        position: absolute;
+        width: 100%;
+        top:0px;
+        display: block;
+        height: 100%;
+
+        header {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+
+            video {
+                position:fixed;
+                max-width: 100%;
+                min-height: 100%;
+                width: auto;
+                height: auto;
+
+                // object-fit: fill;
+                // o-object-fit: fill;
+            }
+        }
+    }
+
+    #about, #games, #technology, footer {
+        top:100%;
+    }
+
+    #navigation {
+        bottom:0em !important;
+        top:auto;
+
+        a {
+            font-size: 2.3em;
+            margin: 0px 3em;
+        }
+    }
+
+    #games {
+        .game {
+
+        }
+    }
+
+    .logo {
+        display: block !important;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center left;
+        width: 100px;
+        height: 300px;
+        position: absolute;
+        top: -5em;
+
+        &.top {
+            background-image : url('../images/logo-top.svg');
+            right: -3em;
+            background-color: $background-highlight;
+        }
+
+        &.ticket {
+            background-image : url('../images/logo-ticket.svg');
+            right: -43.3em;
+            width: 300px;
+            @include slide(all 1.4s ease);
+
+            &.slide {
+                right:7.2em;
+            }
+        }
+
+        &.bottom {
+            background-image : url('../images/logo-bottom.svg');
+            right:2.9em;
+        }
+
+    }
+
+    .right {
+        float : right;
+    }
+
+}
+
+@media (min-width: $screen-sm-min) {
+  body {
+    background-color: hotpink !important;
+  }
+
+  .title {
+    text-align : left !important;
+  }
+
+  .align-right {
+    .title {
+        padding-right : 0.4em;
+    }
+  }
+
+  .align-left {
+        .title {
+            padding-left: 0.4em;
+        }
+    }
+
+}
+
+@media (min-width: $screen-xs-min) {
+  body {
+    background-color: red !important;
+  }
+
+  #technology {
+    .tech {
+        height: 100px;
+    }
+  }
+}

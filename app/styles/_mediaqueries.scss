@@ -1,7 +1,4 @@
 @media (min-width: $screen-lg-min) {
-  body {
-    background-color: yellow !important;
-  }
 
   #navigation {
     a {
@@ -17,10 +14,6 @@
 
 
 @media (min-width: $screen-md-min) {
-  body {
-    background-color: green !important;
-  }
-
   #header {
         position: absolute;
         width: 100%;
@@ -37,6 +30,7 @@
             video {
                 position:fixed;
                 max-width: 100%;
+                min-width: 100%;
                 min-height: 100%;
                 width: auto;
                 height: auto;
@@ -108,9 +102,6 @@
 }
 
 @media (min-width: $screen-sm-min) {
-  body {
-    background-color: hotpink !important;
-  }
 
   .title {
     text-align : left !important;

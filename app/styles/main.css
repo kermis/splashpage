@@ -4679,16 +4679,12 @@ footer {
   padding: 0.4em; }
 
 @media (min-width: 1200px) {
-  body {
-    background-color: yellow !important; }
   #navigation a {
     margin: 0px 5em; }
   .multi {
     margin-left: 0.5em !important; } }
 
 @media (min-width: 992px) {
-  body {
-    background-color: green !important; }
   #header {
     position: absolute;
     width: 100%;
@@ -4702,6 +4698,7 @@ footer {
       #header header video {
         position: fixed;
         max-width: 100%;
+        min-width: 100%;
         min-height: 100%;
         width: auto;
         height: auto; }
@@ -4740,8 +4737,6 @@ footer {
     float: right; } }
 
 @media (min-width: 768px) {
-  body {
-    background-color: hotpink !important; }
   .title {
     text-align: left !important; }
   .align-right .title {

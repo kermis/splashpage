@@ -4745,7 +4745,5 @@ footer {
     padding-left: 0.4em; } }
 
 @media (min-width: 480px) {
-  body {
-    background-color: red !important; }
   #technology .tech {
     height: 100px; } }

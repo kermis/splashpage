@@ -65,11 +65,12 @@ article {
     padding: 1em;
     z-index: 100;
     background-color: rgba($color-white, .95);
+    padding-top : 1.4em;
 
     a {
-        font-size: 2em;
+        font-size: 1.7em;
         color:$nav;
-        margin: 0px .6em;
+        margin: 1px .3em;
         text-decoration: none;
         @include slide(all .5s ease);
 
@@ -197,7 +198,7 @@ article {
         width: 100%;
         height: 75px;
         background-repeat : no-repeat;
-        background-size : 75%;
+        background-size : contain;
         background-position : center;
 
         &.webgl {

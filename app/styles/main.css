@@ -4457,7 +4457,8 @@ button.close {
   text-align: center; }
 
 .align-left.title {
-  text-align: center; }
+  text-align: center;
+  padding-left: 0.4em; }
 
 .right {
   float: none; }

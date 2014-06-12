@@ -2469,9 +2469,6 @@ tbody.collapse.in {
 .btn-group .dropdown-toggle:active, .btn-group.open .dropdown-toggle {
   outline: 0; }
 
-
-
-
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
@@ -2564,8 +2561,6 @@ tbody.collapse.in {
     float: left;
     width: 100%;
     margin-bottom: 0; }
-
-
 
 .input-group-addon, .input-group-btn, .input-group .form-control {
   display: table-cell; }
@@ -4512,6 +4507,54 @@ button.close {
 .btn {
   padding: 0.8em 5em; }
 
+.flash {
+  -webkit-animation: flash 0.2s linear 0 infinite;
+  /* Chrome, Safari, Opera */
+  animation: flash 0.2s linear 0 infinite;
+  /* Standard syntax */ }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rotation {
+  0% {
+    transform: rotate(0deg) scale(1);
+    -webkit-transform: rotate(0deg) scale(1); }
+
+  50% {
+    transform: rotate(180deg) scale(0.5);
+    -webkit-transform: rotate(180deg) scale(0.5); }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+    -webkit-transform: rotate(360deg) scale(1); } }
+
+/* Standard syntax */
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1); }
+
+  50% {
+    -webkit-transform: rotate(180deg) scale(0.5);
+    transform: rotate(180deg) scale(0.5); }
+
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+    transform: rotate(360deg) scale(1); } }
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes flash {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
 html, body {
   height: 100%; }
 
@@ -4699,7 +4742,7 @@ footer {
       height: 100%; }
       #header header video {
         position: fixed;
-        max-width: 100%;
+        max-width: 110%;
         min-width: 100%;
         min-height: 100%;
         width: auto;

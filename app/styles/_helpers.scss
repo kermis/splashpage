@@ -58,5 +58,66 @@
     padding: 0.8em 5em;
 }
 
+.rotation{
+    // -webkit-animation: rotation 1s linear 0 infinite; Chrome, Safari, Opera
+    // animation: rotation 1s linear 0 infinite; /* Standard syntax */
+}
 
+.flash{
+     -webkit-animation: flash 0.2s linear 0 infinite; /* Chrome, Safari, Opera */
+    animation: flash 0.2s linear 0 infinite; /* Standard syntax */
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rotation {
+    0%   {
+        transform: rotate(0deg) scale(1);
+        -webkit-transform: rotate(0deg) scale(1);
+    }
+
+    50%  {
+         transform:rotate(180deg) scale(0.5);
+         -webkit-transform:rotate(180deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        -webkit-transform: rotate(360deg) scale(1);
+    }
+}
+
+/* Standard syntax */
+@keyframes rotation {
+    0%   {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50%  {
+         transform:rotate(180deg) scale(0.5);
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@-webkit-keyframes flash {
+    0%   {
+        opacity: 1;
+    }
+
+    100%   {
+        opacity: 0;
+    }
+}
+
+@keyframes flash {
+    0%   {
+        opacity: 1;
+    }
+
+    100%   {
+        opacity: 0;
+    }
+}
 

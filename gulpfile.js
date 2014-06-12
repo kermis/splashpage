@@ -110,6 +110,7 @@ gulp.task('wiredep', function () {
 
 gulp.task('watch', ['serve'], function () {
 
+    // livereload.listen();
     // watch for changes
     gulp.watch(['app/*.html'], reload);
 

@@ -42,35 +42,39 @@ $(function() {
     easter_egg.code = replaceText;
     easter_egg.load();
 
-    $.ajax('http://kermisdatabasevanbartenrobbert.herokuapp.com/highscores').done(function(data) {
-        sortScores(data);
-    })
-
+    getScores('fish');
+    getScores('shoot');
+    getScores('basket');
+    getScores('fly');
 });
 
-function sortScores(data) {
-    for (var i = 0; i < data.length; i++) {
-        data[i].score = parseInt(data[i].score)
-        switch (data[i].app) {
-            case 'fly':
-                scores.fly.push(data[i]);
-                break;
-            case 'fish':
-                scores.fish.push(data[i]);
-                break;
-            case 'basket':
-                scores.basket.push(data[i]);
-                break;
-            case 'shoot':
-                scores.shoot.push(data[i]);
-                break;
-        }
-    }
-    scores.fly.sortBy('score');
-    scores.fish.sortBy('score');
-    scores.basket.sortBy('score');
-    scores.shoot.sortBy('score');
+function getScores(app){
 
+	$('.scores-'+app).empty();
+
+	$.ajax('http://kermisdatabasevanbartenrobbert.herokuapp.com/highscores/'+app).done(function(data) {
+        console.log(data)
+        for (var i = 0; i < data.length; i++) {
+        	data[i].score = parseInt(data[i].score);
+        };
+        data = data.sortBy('score');
+
+        for (var i = 0; i < 6; i++) {
+        	if(data[i]){
+	        	$('.scores-'+app).append('<div class="col-xs-9">'
+	        		+data[i].name
+	        		+'</div><div class="col-xs-3">'
+	        		+data[i].score
+	        		+'</div>')
+        	}else{
+        		// $('.scores-'+app).html('no scores available')
+        	}
+        };
+
+        if($('.scores-'+app).html() == ''){
+        	$('.scores-'+app).html('<div class="col-xs-12">No scores available</div>')
+        }
+    })
 }
 
 Array.prototype.sortBy = function() {

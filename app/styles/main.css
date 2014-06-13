@@ -4714,6 +4714,16 @@ article {
     #technology .tech.physi {
       background-image: url('../images/physi.svg'); }
 
+#highscores {
+  position: relative;
+  bottom: 0;
+  z-index: 97;
+  background: #094a69;
+  color: #ffffff; }
+  #highscores .scores {
+    font-weight: 200;
+    font-size: 1.3em; }
+
 footer {
   position: relative;
   width: 100%;

@@ -238,6 +238,18 @@ article {
     }
 }
 
+#highscores {
+    position: relative;
+    bottom: 0;
+    z-index: 97;
+    background: $color-blue;
+    color: $title-white;
+    .scores{
+        font-weight: 200;
+        font-size: 1.3em;
+    }
+}
+
 footer {
     position: relative;
     width: 100%;

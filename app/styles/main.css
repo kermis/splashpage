@@ -2469,6 +2469,9 @@ tbody.collapse.in {
 .btn-group .dropdown-toggle:active, .btn-group.open .dropdown-toggle {
   outline: 0; }
 
+
+
+
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px; }
@@ -2561,6 +2564,8 @@ tbody.collapse.in {
     float: left;
     width: 100%;
     margin-bottom: 0; }
+
+
 
 .input-group-addon, .input-group-btn, .input-group .form-control {
   display: table-cell; }
@@ -4507,6 +4512,7 @@ button.close {
 .btn {
   padding: 0.8em 5em; }
 
+
 .flash {
   -webkit-animation: flash 0.2s linear 0 infinite;
   /* Chrome, Safari, Opera */
@@ -4775,7 +4781,7 @@ footer {
         font-size: 10rem;
         top: 45%;
         margin-top: -5rem; }
-  #about, #games, #technology, footer {
+  #about, #games, #technology, #highscores, footer {
     top: 100%; }
   #navigation {
     bottom: 0em !important;

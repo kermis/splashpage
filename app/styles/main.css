@@ -4741,6 +4741,19 @@ footer {
   text-align: center;
   padding: 0.4em; }
 
+.game:last-child {
+  margin-bottom: 0px; }
+
+#games {
+  padding-bottom: 0px; }
+
+.covervid-wrapper {
+  position: fixed;
+  top: -2.9em;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 @media (min-width: 1200px) {
   #navigation a {
     margin: 0px 5em; }
@@ -4767,20 +4780,20 @@ footer {
         width: auto;
         height: auto;
         z-index: 90; }
-    #header .video_play {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 100;
-      text-align: center; }
-      #header .video_play .glyphicon-play {
-        color: white;
-        font-size: 10rem;
-        top: 45%;
-        margin-top: -5rem; }
+  .video_play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    text-align: center; }
+    .video_play .glyphicon-play {
+      color: white;
+      font-size: 10rem;
+      top: 45%;
+      margin-top: -5rem; }
   #about, #games, #technology, #highscores, footer {
     top: 100%; }
   #navigation {

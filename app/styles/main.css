@@ -4633,7 +4633,8 @@ article {
   height: auto;
   background-color: #e6414b;
   color: #ffffff;
-  overflow: hidden; }
+  overflow: hidden;
+  z-index: 95; }
   #about h1 {
     color: #ffffff;
     padding-bottom: 0.5em; }
@@ -4650,7 +4651,8 @@ article {
   top: 5em;
   background-color: #ffffff;
   width: 100%;
-  height: auto; }
+  height: auto;
+  z-index: 96; }
   #games h1 {
     color: #094a69; }
   #games .game-pic {
@@ -4735,23 +4737,40 @@ footer {
     width: 100%;
     top: 0px;
     display: block;
-    height: 100%; }
+    height: 100%;
+    overflow: hidden; }
     #header header {
       position: absolute;
       width: 100%;
       height: 100%; }
       #header header video {
-        position: fixed;
+        position: absolute;
         max-width: 110%;
         min-width: 100%;
         min-height: 100%;
         width: auto;
-        height: auto; }
+        height: auto;
+        z-index: 90; }
+    #header .video_play {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      text-align: center; }
+      #header .video_play .glyphicon-play {
+        color: white;
+        font-size: 10rem;
+        top: 45%;
+        margin-top: -5rem; }
   #about, #games, #technology, footer {
     top: 100%; }
   #navigation {
     bottom: 0em !important;
-    top: auto; }
+    top: auto;
+    z-index: 1000; }
     #navigation a {
       font-size: 2.3em;
       margin: 0px 3em; }

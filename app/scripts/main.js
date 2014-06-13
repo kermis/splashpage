@@ -1,5 +1,12 @@
 'use strict';
 
+var scores = {
+    fish: [],
+    shoot: [],
+    basket: [],
+    fly: [],
+};
+
 $(function() {
 
     if ($('#header').css('display') === 'none') {
@@ -10,13 +17,89 @@ $(function() {
 
 
     }
+    var video = document.getElementsByTagName('video')[0];
+    $('.video_play').on('click', function() {
+        if (video.paused) {
+            video.play();
+            $('.video_play').animate({
+                opacity: 0
+            }, {
+                duration: 500
+            })
+            // button.textContent = "||";
+        } else {
+            video.pause();
+            $('.video_play').animate({
+                opacity: 1
+            }, {
+                duration: 500
+            })
+            // button.textContent = ">";
+        }
+    })
 
     var easter_egg = new Konami();
     easter_egg.code = replaceText;
     easter_egg.load();
 
+    $.ajax('http://kermisdatabasevanbartenrobbert.herokuapp.com/highscores').done(function(data) {
+        sortScores(data);
+    })
 
 });
+
+function sortScores(data) {
+    for (var i = 0; i < data.length; i++) {
+        data[i].score = parseInt(data[i].score)
+        switch (data[i].app) {
+            case 'fly':
+                scores.fly.push(data[i]);
+                break;
+            case 'fish':
+                scores.fish.push(data[i]);
+                break;
+            case 'basket':
+                scores.basket.push(data[i]);
+                break;
+            case 'shoot':
+                scores.shoot.push(data[i]);
+                break;
+        }
+    }
+    scores.fly.sortBy('score');
+    scores.fish.sortBy('score');
+    scores.basket.sortBy('score');
+    scores.shoot.sortBy('score');
+
+}
+
+Array.prototype.sortBy = function() {
+    function _sortByAttr(attr) {
+        var sortOrder = -1;
+        if (attr[0] == "-") {
+            sortOrder = -1;
+            attr = attr.substr(1);
+        }
+        return function(a, b) {
+            var result = (a[attr] < b[attr]) ? -1 : (a[attr] > b[attr]) ? 1 : 0;
+            return result * sortOrder;
+        }
+    }
+
+    function _getSortFunc() {
+        if (arguments.length == 0) {
+            throw "Zero length arguments not allowed for Array.sortBy()";
+        }
+        var args = arguments;
+        return function(a, b) {
+            for (var result = 0, i = 0; result == 0 && i < args.length; i++) {
+                result = _sortByAttr(args[i])(a, b);
+            }
+            return result;
+        }
+    }
+    return this.sort(_getSortFunc.apply(null, arguments));
+}
 
 function replaceText() {
     $('article.fish').html('<p>Quack Quack Quack! Quack Quack! <strong>Quack Quack!</strong>Quack Quack Quack! Quack Quack! <strong>Quack Quack!</strong>Quack Quack Quack! Quack Quack! <strong>Quack Quack!</strong>Quack Quack Quack! Quack Quack! <strong>Quack Quack!</strong>Quack Quack Quack! Quack Quack! <strong>Quack Quack!</strong>Quack Quack Quack! Quack Quack! <strong>Quack Quack!</strong></p>')
@@ -41,6 +124,13 @@ function replaceText() {
     // $('.tech').addClass('rotation');
     $('article p').addClass('flash');
 }
+
+
+
+
+
+
+
 
 
 /*

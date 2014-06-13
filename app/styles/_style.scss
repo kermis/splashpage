@@ -102,7 +102,7 @@ article {
     background-color: $background-highlight;
     color: $color-white;
     overflow: hidden;
-
+    z-index: 95;
     h1 {
         color: $title-white;
         padding-bottom:.5em;
@@ -127,6 +127,7 @@ article {
     background-color: $background;
     width: 100%;
     height: auto;
+    z-index: 96;
 
     h1 {
         color: $title-blue;
@@ -248,3 +249,6 @@ footer {
     text-align: center;
     padding:.4em;
 }
+
+
+
